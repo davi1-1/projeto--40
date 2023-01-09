@@ -119,18 +119,18 @@ class Game {
 
   handleGrass(index){
 
-     animals[index - 1].overlap(grass, function(collector, collected) {
+    // animals[index - 1].overlap(grass, function(collector, collected) {
+    //   player.score += 21;
+    //   player.update();
+    //   collected.remove();
+    // });
+
+
+     animals[index - 1].overlap(grass, function(collected, collector) {
        player.score += 21;
-       player.update();
-       collected.remove();
-     });
-
-
-  //   animals[index - 1].overlap(grass, function(collected, collector) {
-  //     player.score += 21;
-  //     player.update();
-  //     collector.remove();
-  //   });
+      player.update();
+      collector.remove();
+    });
 
 
   //   animals[index].overlap(grass, function(collector, collected) {
